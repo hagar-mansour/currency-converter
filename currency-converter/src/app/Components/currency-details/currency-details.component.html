@@ -1,0 +1,62 @@
+<div class="container-fluid p-2">
+  <h1 class="  m-3">{{baseCurrency}} - {{ baseCurrencyName }}</h1>
+  <form    (submit)="formHandler($event)" [formGroup]="currencyForm">
+<div class="row m-auto">
+  <div class="col-md-5   form-group  mb-2">
+    <label for="amount" class="mr-2">Entered amount is:</label>
+    <input type="number" class="form-control"  formControlName="amount"   id="amount">
+  </div>
+</div>
+<div class="row m-auto">
+<div class="col-md-5  form-group">
+  <label for="baseCurrency" class="mr-2">From:</label>
+    <select id="baseCurrency" name="baseCurrency" formControlName="baseCurrency" class="form-control mr-2">
+     <option [value]="currencyForm.value.baseCurrency" selected disabled>{{ currencyForm.value.baseCurrency }}</option>
+       </select>
+</div>
+<div class="col-md-1  text-center m-4 form-group">
+  <div class="icon">
+  <i class="bi bi-arrow-left-right"></i>
+</div>
+</div>
+<div class="col-md-5  form-group">
+  <label for="targetCurrency" class="mr-2">To:</label>
+  <select id="targetCurrency"   name="targetCurrency" formControlName="targetCurrency" class="form-control mr-2">
+   <option   *ngFor="let symbol of symbols | keyvalue" [value]="symbol.key">{{symbol.key}}</option>
+  </select>
+</div>
+</div>
+<div class="row m-auto">
+  <div >
+<button type="submit" class="convert btn btn-primary   my-3" (click)="getConvert()">Convert</button>
+</div>
+</div>
+<div class="row  justify-content-between m-auto">
+  <div class="col-md-3">
+    <div  class=" p-1 text-center  currency-rate my-2">
+      <h5>1.00 {{currencyForm.value.baseCurrency}} = {{exchangeRate2}} {{currencyForm.value.targetCurrency}}</h5>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="p-1 text-center  result  my-2">
+      <h5>Result is :{{exchangeRate}} {{currencyForm.value.targetCurrency}}</h5>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div  class="my-2" >
+    <button type="submit" [routerLink]="['/converter']" class=" btn btn-primary  details " >Back to converter</button>
+  </div>
+  </div>
+</div>
+
+</form>
+</div>
+<div class="container my-5  ">
+  <div class="row ">
+    <div class="col-md-10  m-auto ">
+      <div class="chart-container w-100">
+        <canvas id="chart"></canvas>
+      </div>  
+    </div>
+  </div>
+</div>

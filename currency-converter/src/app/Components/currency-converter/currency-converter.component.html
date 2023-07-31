@@ -1,0 +1,72 @@
+<div class="container-fluid p-2">
+  <h1 class=" m-3">Currency Exchanger</h1>
+  <form    (submit)="formHandler($event)" [formGroup]="currencyForm">
+<div class="row m-auto">
+  <div class="col-md-5   form-group  mb-2">
+    <label for="amount" class="mr-2">Amount:</label>
+    <input type="number" class="form-control"  formControlName="amount"   id="amount">
+  </div>
+</div>
+<div class="row m-auto">
+<div class="col-md-5  form-group">
+  <label for="baseCurrency" class="">From:</label>
+  <select id="baseCurrency" name="baseCurrency" 
+  [value]="selectedBaseCurrency.value"
+  formControlName="baseCurrency"
+   class="form-control mr-2">
+    <option *ngFor="let symbol of symbols | keyvalue" [value]="symbol.key">{{symbol.key}}</option>
+  </select>
+</div>
+<div class="col-md-1  text-center m-4 form-group">
+  <div class="icon">
+  <i class="bi bi-arrow-left-right"></i>
+</div>
+</div>
+<div class="col-md-5  form-group">
+  <label for="targetCurrency" class="mr-2">To:</label>
+  <select id="targetCurrency"   name="targetCurrency" 
+  [value]="selectedTargetCurrency.value"
+  formControlName="targetCurrency"
+   class="form-control mr-2">
+   <option   *ngFor="let symbol of symbols | keyvalue" [value]="symbol.key">{{symbol.key}}</option>
+  </select>
+</div>
+</div>
+<div class="row m-auto">
+  <div class="">
+<button type="submit" class="convert btn btn-primary   my-3" (click)="getConvert()">Convert</button>
+</div>
+</div>
+<div class="row  justify-content-between m-auto">
+  <div class="col-md-3">
+    <div  class="text-center p-1 currency-rate my-2">
+      <h5>1.00 {{currencyForm.value.baseCurrency}} = {{exchangeRate2}} {{currencyForm.value.targetCurrency}}</h5>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="p-1 text-center  result  my-2">
+      <h5>Result is :{{exchangeRate}} {{currencyForm.value.targetCurrency}}</h5>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div  class="my-2" >
+    <button type="submit" [routerLink]="['/details']" class=" btn btn-primary  details " >More Details</button>
+  </div>
+  </div>
+</div>
+
+</form>
+
+</div>
+<div class="container-fluid p-5">
+  <!-- cards -->
+<div class="row justify-content-center  ">
+  <div class="card m-3  p-3 col-md-3" *ngFor="let convertedCurancy of cardCarances | keyvalue" >
+    <div class="card-body">
+      <h5 class="card-title">1.00 {{currencyForm.value.baseCurrency}} ={{convertedCurancy.value}} {{convertedCurancy.key}} </h5>
+   
+      </div>
+      </div>
+</div>
+</div>
+

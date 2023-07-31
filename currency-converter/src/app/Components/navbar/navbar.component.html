@@ -1,0 +1,49 @@
+<!-- <nav class="    navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/curr2jpg.jpg" alt="" class="w-25" height="24">
+            Converter
+          </a>
+      <div class="collapse navbar-collapse  justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          
+        </ul>
+        <ul class="navbar-nav">
+          <button class="btn btn-outline-secondary  me-3   text-white nav-item">
+            <a class="nav-link" [routerLink]="['/converter']">Currency Converter </a>
+        </button>
+            <button class="btn btn-outline-secondary nav-item  me-3  ">
+                <a class="nav-link" [routerLink]="['/details']">Currency Details  </a>
+            </button>
+          
+          </ul>
+      </div>
+    </div>
+  </nav> -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container d-flex">
+      <a class="navbar-brand" href="#"> 
+        <i class="bi bi-currency-exchange"></i>
+        <span class="fs-3">Exchanger</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fs-4" aria-current="page"
+             [routerLink]="['/details']"
+              routerLinkActive="activeLink"
+            [routerLinkActiveOptions]="{exact:true}">
+              Details</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active fs-4" aria-current="page" [routerLink]="['/converter']"
+            routerLinkActive="activeLink"
+            [routerLinkActiveOptions]="{exact:true}"
+            >Converter</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>

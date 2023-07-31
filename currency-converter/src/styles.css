@@ -1,0 +1,26 @@
+.container-fluid{
+    background-color: #f8f9fa;
+}
+.icon   i{
+    border: 1px solid   rgb(167, 167, 167);
+    width: 50px;
+    height: 50px;
+    padding: 8px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+.convert  , .details{
+    padding:.2rem   1rem ;
+    font-size:1.3em ;
+}
+.currency-rate , .result{
+    border: 1px solid   rgb(167, 167, 167);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
